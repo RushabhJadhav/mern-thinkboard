@@ -10,13 +10,13 @@ dotenv.config();
 const app = express();
 
 // middleware
-app.use(express.json())
-
-app.use(rateLimiter) // rate limiter middleware
-
 app.use(cors({
     origin: "http://localhost:5173"
 }))
+
+app.use(express.json())
+
+app.use(rateLimiter) // rate limiter middleware
 
 app.use("/api/notes", notesRoutes);
 
