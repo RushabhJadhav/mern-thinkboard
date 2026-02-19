@@ -19,11 +19,12 @@ const HomePage = () => {
         setIsRateLimited(false);
       } catch(error) {
         console.log("Error fetching notes", error)
-        if(error.response?.status === 429) {
-          setIsRateLimited(true)
-        } else {
-          toast.error("Failed to load Notes.")
-        }
+        // if(error.response?.status === 429) {
+        //   setIsRateLimited(true)
+        // } else {
+        //   toast.error("Failed to load Notes.")
+        // }
+        toast.error("Failed to load Notes.");
       } finally {
         setLoading(false);
       }
