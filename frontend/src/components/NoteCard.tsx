@@ -3,9 +3,10 @@ import { PenSquareIcon, Trash2Icon } from "lucide-react";
 import { Link } from "react-router";
 import formatDate from "../lib/utils";
 import toast from "react-hot-toast";
+import { Note } from "../types/types";
 
-const NoteCard = ({ note, setNotes }) => {
-    const handleDelete = async (e, ID) => {
+const NoteCard = ({ note, setNotes }: {note: Note, setNotes: React.Dispatch<React.SetStateAction<Note[]>>}) => {
+    const handleDelete = async (e: React.FormEvent, ID: Note['_id']) => {
         e.preventDefault();
 
         if(!window.confirm("Are you sure you want to delete this note?")) return;
